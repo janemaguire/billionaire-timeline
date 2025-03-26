@@ -16,29 +16,37 @@ function App() {
   }
 
   return (
-    <>
+    <div>
       <h1>Billionaire timeline</h1>
       <p>How long until you earn a billion?</p>
       <p>Enter your earnings to find out</p>
-      <form action={calculateYears}>
+      <div className = "form-container">
+        <form action={calculateYears}>
 
-        <input type="text" name="earnings" required/>
-        
-        <label>
-          <input type="radio" name="period" value="year" required/>
-          Yearly
-        </label>
-        <label>
-          <input type="radio" name="period" value="month" />
-          Monthly
-        </label>
-        <label>
-          <input type="radio" name="period" value="week" />
-          Weekly
-        </label>
-        <button type="submit">Submit</button>
-      </form>
-    </>
+          <div className = "earnings-container">
+            <input type="text" name="earnings" required/>
+          </div>
+
+          <div className = "period-container">
+            <label>
+              <input type="radio" name="period" value="year" required/>
+              Yearly
+            </label>
+            <label>
+              <input type="radio" name="period" value="month" />
+              Monthly
+            </label>
+            <label>
+              <input type="radio" name="period" value="week" />
+              Weekly
+            </label>
+          </div>
+
+          <button type="submit">Submit</button>
+
+        </form>
+      </div>
+    </div>
   )
 }
 
