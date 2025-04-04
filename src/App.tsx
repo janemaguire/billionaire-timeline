@@ -23,8 +23,8 @@ function App() {
   return (
     <div>
       <h1>Billionaire timeline</h1>
-      <p>How long until you earn a billion?</p>
-      <p>Enter your earnings to find out</p>
+      <p>How long does it take to earn a billion?</p>
+      <p>Enter your earnings to find out:</p>
       <div className = "form-container">
         <form action={calculateYears}>
 
