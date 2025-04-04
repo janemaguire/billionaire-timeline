@@ -1,6 +1,10 @@
+import React, { useState } from 'react';
+import Results from './Results.tsx'
 import './App.css'
 
 function App() {
+
+  const [yearsToGo, setYearsToGo] = useState(0);
 
   function calculateYears(formData) {
     const earnings = formData.get("earnings");
@@ -11,8 +15,9 @@ function App() {
     period === "month" ? salary = earnings * 12 : 
     salary = earnings;
 
-    const years = Math.round(1000000000 / salary).toLocaleString('en');
-    alert(`'${years} years to go!'`);
+    const years = Math.round(1000000000 / salary);
+
+    setYearsToGo(years);
   }
 
   return (
@@ -46,6 +51,9 @@ function App() {
 
         </form>
       </div>
+   
+      {yearsToGo > 0 && <Results result={yearsToGo}/>}
+      
     </div>
   )
 }
