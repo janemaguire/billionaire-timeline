@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
+import Form from './Form.tsx'
 import Results from './Results.tsx'
 import './App.css'
 
 function App() {
 
-  const [yearsToGo, setYearsToGo] = useState(0);
+  const [userData, setUserData] = useState({});
+  const [showResults, setShowResults] = useState(false);
 
   function calculateYears(formData) {
     const earnings = formData.get("earnings");
@@ -17,42 +19,25 @@ function App() {
 
     const years = Math.round(1000000000 / salary);
 
-    setYearsToGo(years);
-  }
+    setUserData({
+            earnings: earnings,
+            period: period,
+            years: years
+    });
+
+    setShowResults(true);
+
+    console.log('years to go ' + years);
+}
 
   return (
     <div>
       <h1>Billionaire timeline</h1>
       <p>How long does it take to earn a billion?</p>
       <p>Enter your earnings to find out:</p>
-      <div className = "form-container">
-        <form action={calculateYears}>
 
-          <div className = "earnings-container">
-            <input type="text" name="earnings" required/>
-          </div>
-
-          <div className = "period-container">
-            <label>
-              <input type="radio" name="period" value="year" required/>
-              Yearly
-            </label>
-            <label>
-              <input type="radio" name="period" value="month" />
-              Monthly
-            </label>
-            <label>
-              <input type="radio" name="period" value="week" />
-              Weekly
-            </label>
-          </div>
-
-          <button type="submit">Submit</button>
-
-        </form>
-      </div>
-   
-      {yearsToGo > 0 && <Results result={yearsToGo}/>}
+      <Form calculate={calculateYears}/>
+      {showResults && <Results />}
       
     </div>
   )
