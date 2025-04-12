@@ -1,58 +1,53 @@
 import React, { useState } from 'react';
+import Form from './Form.tsx'
 import Results from './Results.tsx'
 import './App.css'
 
 function App() {
 
-  const [yearsToGo, setYearsToGo] = useState(0);
+  const [userData, setUserData] = useState({
+    earnings: 0,
+    period: 0,
+    yearsToGo: 0,
+    lifetimes: 0,
+    endYear: 0,
+    moonYears: 0
+  });
+
+  const [showResults, setShowResults] = useState(false);
 
   function calculateYears(formData) {
+
     const earnings = formData.get("earnings");
     const period = formData.get("period");
-    let salary;
+    const salary = period === "week" ? earnings * 52 :
+                   period === "month" ? earnings * 12 : 
+                   earnings;
+    const yearsToGo = Math.round(1000000000 / salary);
+    const lifetimes = Math.round(yearsToGo/81);
+    const date = new Date;
+    const yearNow = date.getFullYear();
+    const endYear = Math.round(yearNow + yearsToGo);
+    const moonYears = Math.round(yearsToGo / 7.3)
 
-    period === "week" ? salary = earnings * 52 :
-    period === "month" ? salary = earnings * 12 : 
-    salary = earnings;
+    setUserData((userData) => ({
+      earnings: earnings,
+      period: period,
+      yearsToGo: yearsToGo,
+      lifetimes: lifetimes,
+      endYear: endYear,
+      moonYears: moonYears
+    }));
 
-    const years = Math.round(1000000000 / salary);
+    setShowResults(true);
 
-    setYearsToGo(years);
-  }
+}
 
   return (
     <div>
       <h1>Billionaire timeline</h1>
-      <p>How long does it take to earn a billion?</p>
-      <p>Enter your earnings to find out:</p>
-      <div className = "form-container">
-        <form action={calculateYears}>
 
-          <div className = "earnings-container">
-            <input type="text" name="earnings" required/>
-          </div>
-
-          <div className = "period-container">
-            <label>
-              <input type="radio" name="period" value="year" required/>
-              Yearly
-            </label>
-            <label>
-              <input type="radio" name="period" value="month" />
-              Monthly
-            </label>
-            <label>
-              <input type="radio" name="period" value="week" />
-              Weekly
-            </label>
-          </div>
-
-          <button type="submit">Submit</button>
-
-        </form>
-      </div>
-   
-      {yearsToGo > 0 && <Results result={yearsToGo}/>}
+      {showResults ? <Results data={userData} /> : <Form calculate={calculateYears}/>}
       
     </div>
   )

@@ -1,10 +1,4 @@
-function Results ({result}) {
-
-    const lifetimes = Math.round(result/81).toLocaleString('en');
-    const date = new Date;
-    const yearNow = date.getFullYear();
-    const endYear = Math.round(yearNow + result);
-    const moonYears = Math.round(result / 7.3).toLocaleString('en')
+function Results ({data}) {
 
     return (
         <div>
@@ -13,6 +7,7 @@ function Results ({result}) {
             <p>Or roughly {data.lifetimes.toLocaleString('en')} lifetimes.</p>
             <p>Long enough to walk to the moon and back {data.moonYears.toLocaleString('en')} times.</p>
             <p>God speed!</p>
+
         </div>
     )
 }
