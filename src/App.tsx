@@ -5,39 +5,49 @@ import './App.css'
 
 function App() {
 
-  const [userData, setUserData] = useState({});
+  const [userData, setUserData] = useState({
+    earnings: 0,
+    period: 0,
+    yearsToGo: 0,
+    lifetimes: 0,
+    endYear: 0,
+    moonYears: 0
+  });
+
   const [showResults, setShowResults] = useState(false);
 
   function calculateYears(formData) {
+
     const earnings = formData.get("earnings");
     const period = formData.get("period");
-    let salary;
+    const salary = period === "week" ? earnings * 52 :
+                   period === "month" ? earnings * 12 : 
+                   earnings;
+    const yearsToGo = Math.round(1000000000 / salary);
+    const lifetimes = Math.round(yearsToGo/81);
+    const date = new Date;
+    const yearNow = date.getFullYear();
+    const endYear = Math.round(yearNow + yearsToGo);
+    const moonYears = Math.round(yearsToGo / 7.3)
 
-    period === "week" ? salary = earnings * 52 :
-    period === "month" ? salary = earnings * 12 : 
-    salary = earnings;
-
-    const years = Math.round(1000000000 / salary);
-
-    setUserData({
-            earnings: earnings,
-            period: period,
-            years: years
-    });
+    setUserData((userData) => ({
+      earnings: earnings,
+      period: period,
+      yearsToGo: yearsToGo,
+      lifetimes: lifetimes,
+      endYear: endYear,
+      moonYears: moonYears
+    }));
 
     setShowResults(true);
 
-    console.log('years to go ' + years);
 }
 
   return (
     <div>
       <h1>Billionaire timeline</h1>
-      <p>How long does it take to earn a billion?</p>
-      <p>Enter your earnings to find out:</p>
 
-      <Form calculate={calculateYears}/>
-      {showResults && <Results />}
+      {showResults ? <Results data={userData} /> : <Form calculate={calculateYears}/>}
       
     </div>
   )
