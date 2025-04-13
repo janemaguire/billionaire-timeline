@@ -1,21 +1,6 @@
-#body {
-  flex-direction: column;
-  margin: 0 auto;
-  place-items: start;
-}
-
-#root {
-  flex-direction: column;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
-
 .form-container {
   display: flex;
   flex-direction: column;
-  width: 80vw;
 }
 
 .earnings-container {
