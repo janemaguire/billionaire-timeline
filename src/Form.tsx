@@ -1,3 +1,5 @@
+import './Form.css'
+
 function Form({calculate}) {
 
     return(
