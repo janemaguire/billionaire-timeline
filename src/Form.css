@@ -47,3 +47,24 @@ input[type="radio"] {
     outline: max(1px, 0.1rem) solid white;
     outline-offset: max(1px, 0.1rem);
   }
+
+  .submit-button {
+    background-color: black;
+    color: orange;
+    padding: 0.5rem 1rem;
+    border: 0.1rem solid black;
+    border-radius: 0.2rem;
+  }
+
+  .submit-button {
+    background-color: black;
+    color: orange;
+    padding: 0.5rem 1rem;
+    border: 0.1rem solid black;
+    border-radius: 0.2rem;
+    
+    &:focus, &:hover {
+        background-color: orange;
+        color: black;
+    }
+  }
