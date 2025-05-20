@@ -62,3 +62,16 @@
     animation-duration: 2s;
     animation-fill-mode: forwards;
 }
+
+.references {
+    font-size: 0.8rem;
+    font-style: italic;
+    text-align: left;
+    margin-top: 2rem;
+    p {
+        margin: 0;
+    }
+    a {
+        color: black;
+    }
+}
