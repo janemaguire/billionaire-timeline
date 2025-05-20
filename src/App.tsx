@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div>
-      <h1>Billionaire timeline</h1>
+      <h1>My First Billion</h1>
 
       {showResults ? <Results data={userData} /> : <Form calculate={calculateYears}/>}
       
