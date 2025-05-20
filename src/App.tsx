@@ -18,7 +18,7 @@ function App() {
 
   function calculateYears(formData) {
 
-    const earnings = formData.get("earnings");
+    const earnings = Number(formData.get("earnings"));
     const period = formData.get("period");
     const salary = period === "week" ? earnings * 52 :
                    period === "month" ? earnings * 12 : 
