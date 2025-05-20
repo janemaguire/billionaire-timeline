@@ -1,0 +1,37 @@
+.years-container {
+    display: flex;
+    justify-content: center;
+}
+
+.years {
+    font-size: 3rem;
+    margin: 0;
+    animation-name: fadeIn;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadeIn {
+    0% { opacity: 0; }
+  100% { opacity: 1; }
+}
