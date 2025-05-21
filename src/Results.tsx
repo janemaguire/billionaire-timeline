@@ -3,8 +3,10 @@ import './Results.css'
 function Results ({data}) {
 
     let digits = data.yearsToGo.toLocaleString('en').split('');
-    console.log('data.earnings', typeof data.earnings);
-    console.log('data.yearsToGo', typeof data.yearsToGo)
+ 
+    let digitsFontSize = digits.length < 8 ? '3rem' : 
+                         digits.length < 10 ? '2rem' :
+                         '1.5rem';
 
     return (
         <>
@@ -13,7 +15,7 @@ function Results ({data}) {
                 <div className="years-container">
                     <div className="digits-container">
                     {digits.map((digit, index) => (
-                        <p className="years" style={{opacity: 0, animationDelay: `${index/2}s`}} key={index}>{digit}</p>
+                        <p className="years" style={{opacity: 0, animationDelay: `${index/2}s`, fontSize: digitsFontSize}} key={index}>{digit}</p>
                     ))}
                     </div>
                     <p className="star-text" style={{opacity: 0, animationDelay: `${digits.length/2}s`}}>years to go!</p>
