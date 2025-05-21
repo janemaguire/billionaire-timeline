@@ -24,11 +24,11 @@ function App() {
                    period === "month" ? earnings * 12 : 
                    earnings;
     const yearsToGo = Math.round(1000000000 / salary);
-    const lifetimes = Math.round(yearsToGo/81);
+    const lifetimes = yearsToGo/81 >= 1 ? Math.round(yearsToGo/81) : yearsToGo/81;
     const date = new Date;
     const yearNow = date.getFullYear();
     const endYear = Math.round(yearNow + yearsToGo);
-    const moonYears = Math.round(yearsToGo / 7.3)
+    const moonYears = yearsToGo / 7.3 >=1 ? Math.round(yearsToGo / 7.3) : yearsToGo / 7.3;
 
     setUserData((userData) => ({
       earnings: earnings,
