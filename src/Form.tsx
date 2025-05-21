@@ -9,7 +9,7 @@ function Form({calculate}) {
           <form action={calculate}>
 
             <div className = "earnings-container">
-              <input type="text" name="earnings" required/>
+              <input type="number" name="earnings" required/>
             </div>
 
             <div className = "period-container">
