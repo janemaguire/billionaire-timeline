@@ -1,4 +1,4 @@
-import './Results.css'
+import './index.css'
 
 function Results ({data}) {
 

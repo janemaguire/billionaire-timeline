@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Form from './Form.tsx'
-import Results from './Results.tsx'
-import './App.css'
+import Form from './Form/index.tsx'
+import Results from './Results/index.tsx'
+import './index.css'
 
 function App() {
 
