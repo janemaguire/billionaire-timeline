@@ -15,24 +15,28 @@ input {
     border-radius: 0.2rem;
 }
 
-input[type="number"] {
+input[type=number] {
     padding: 0.5rem;
     font-family: "Cal Sans", sans-serif;
     font-weight: 400;
     font-style: normal;
+    /* Removes arrow controls */
+    -moz-appearance: textfield;
 }
 
+/* Removes arrow controls on number input */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
-input[type=number] {
-  -moz-appearance: textfield;
+/* Avoids default autofill bg color */
+input[type=number]:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px orange inset;
 }
 
-input[type="radio"] {
+input[type=radio] {
     -webkit-appearance: none;
     appearance: none;
     margin-right: 0.5rem;
@@ -41,33 +45,25 @@ input[type="radio"] {
     height: 1rem;
     display: grid;
     place-content: center;
-  }
 
-  input[type="radio"]::before {
-    content: "";
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 0.2rem;
-    transform: scale(0);
-    box-shadow: inset 1rem 1rem black;
-  }
+    &::before {
+      content: "";
+      width: 0.5rem;
+      height: 0.5rem;
+      border-radius: 0.2rem;
+      transform: scale(0);
+      box-shadow: inset 1rem 1rem black;
+    }
 
-  input[type="radio"]:checked::before {
-    transform: scale(1);
-  }
+    &:checked::before {
+      transform: scale(1);
+    }
 
-  input[type="radio"]:focus {
-    outline: max(1px, 0.1rem) solid white;
-    outline-offset: max(1px, 0.1rem);
-  }
+    &:focus {
+      outline: max(1px, 0.1rem) solid black;
+      outline-offset: max(1px, 0.1rem);
+    }
 
-  .submit-button {
-    background-color: black;
-    color: orange;
-    padding: 0.5rem 1rem;
-    border: 0.1rem solid black;
-    border-radius: 0.2rem;
-    margin-bottom: 1rem;
   }
 
   .submit-button {
