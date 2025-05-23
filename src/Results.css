@@ -20,7 +20,7 @@
     display: flex;
 }
 
-.years {
+.digits {
     color: orange;
     margin: 0;
     animation-name: fadeIn;
@@ -65,7 +65,6 @@
 .references {
     font-size: 0.8rem;
     font-style: italic;
-    text-align: left;
     margin-top: 2rem;
     p {
         margin: 0;
