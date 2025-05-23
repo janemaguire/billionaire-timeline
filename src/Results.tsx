@@ -30,7 +30,7 @@ function Results ({data}) {
             <div className="references">
                             
             <p>* UK men and women, 2021-2023, <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/lifeexpectancies/bulletins/nationallifetablesunitedkingdom/2021to2023additionaldata" target='blank'><cite>NOS</cite></a></p>
-            <p><span>&#10013;</span><cite><a href="https://www.skyatnightmagazine.com/space-science/how-long-does-take-get-moon" taget="blank"><cite>BBC Sky at Night</cite></a></cite>
+            <p><span>&#10013;</span><cite><a href="https://www.skyatnightmagazine.com/space-science/how-long-does-take-get-moon" target="blank"><cite>BBC Sky at Night</cite></a></cite>
             </p>
             </div>
         </>
