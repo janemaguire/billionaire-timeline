@@ -3,16 +3,16 @@ import './Form.css'
 function Form({calculate}) {
 
     return(
-        <div className = "form-container">
+        <div className="form-container">
           <p>How long does it take to earn a billion?</p>
           <p>Enter your earnings to find out:</p>
           <form action={calculate}>
 
-            <div className = "earnings-container">
+            <div className="earnings-container">
               <input type="number" name="earnings" required/>
             </div>
 
-            <div className = "period-container">
+            <div className="period-container">
               <label>
                 <input type="radio" name="period" value="year" required/>
                 Yearly
