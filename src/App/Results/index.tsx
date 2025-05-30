@@ -21,9 +21,9 @@ function Results ({data}) {
                     <p className="star-text" style={{opacity: 0, animationDelay: `${digits.length/2}s`}}>years to go!</p>
                 </div>
                 
-                <p>Congratulations! Earning £{data.earnings.toLocaleString('en')} a {data.period} will make you a billionaire by the year {data.endYear}.</p>
-                <p>That's only {data.yearsToGo.toLocaleString('en')} years away! Or roughly {data.lifetimes.toLocaleString('en')} lifetimes<sup>*</sup>. 
-                    Long enough to walk to the moon and back {data.moonYears.toLocaleString('en')} times<sup>&#10013;</sup>.</p>
+                <p>Earning £{data.earnings.toLocaleString('en')} a {data.period} will make you a billionaire by the year {data.endYear}.</p>
+                <p>That's only {data.yearsToGo.toLocaleString('en')} years away! Roughly {data.lifetimes.toLocaleString('en')} lifetimes<sup>*</sup>. 
+                    Or long enough to walk to the moon and back {data.moonYears.toLocaleString('en')} times<sup>&#10013;</sup>. But don't let that put you off.</p>
                 <p>God speed!</p>
             </div>
 
