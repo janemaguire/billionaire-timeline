@@ -14,7 +14,7 @@ function Results ({data}) {
                 
                 <div className="years-container">
                     <div className="digits-container">
-                    {digits.map((digit, index) => (
+                    {digits.map((digit: string, index: number) => (
                         <p className="digits" style={{opacity: 0, animationDelay: `${index/2}s`, fontSize: digitsFontSize}} key={index}>{digit}</p>
                     ))}
                     </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Form from './Form/index.tsx'
 import Results from './Results/index.tsx'
 import './index.css'
@@ -16,7 +16,7 @@ function App() {
 
   const [showResults, setShowResults] = useState(false);
 
-  function calculateYears(formData) {
+  function calculateYears(formData: object) {
 
     const earnings = Number(formData.get("earnings"));
     const period = formData.get("period");
@@ -30,7 +30,7 @@ function App() {
     const endYear = Math.round(yearNow + yearsToGo);
     const moonYears = yearsToGo / 7.3 >=1 ? Math.round(yearsToGo / 7.3) : yearsToGo / 7.3;
 
-    setUserData((userData) => ({
+    setUserData(() => ({
       earnings: earnings,
       period: period,
       yearsToGo: yearsToGo,
