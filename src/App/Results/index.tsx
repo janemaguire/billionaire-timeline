@@ -1,6 +1,6 @@
 import './index.css'
 
-function Results ({data}) {
+function Results ({data} : {data: any}) {
 
     let digits = data.yearsToGo.toLocaleString('en').split('');
  

@@ -1,6 +1,6 @@
 import './index.css'
 
-function Form({calculateYears: function}) {
+function Form({calculateYears} : {calculateYears:any}) {
 
     return(
         <div className="form-container">

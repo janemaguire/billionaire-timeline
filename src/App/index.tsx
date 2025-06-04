@@ -16,7 +16,7 @@ function App() {
 
   const [showResults, setShowResults] = useState(false);
 
-  function calculateYears(formData) {
+  function calculateYears({formData} : {formData: any}) {
 
     const earnings = Number(formData.get("earnings"));
     const period = formData.get("period");
