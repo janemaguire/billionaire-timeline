@@ -25,6 +25,7 @@ function Results ({data}) {
                 <p>That's only {data.yearsToGo.toLocaleString('en')} years away! Roughly {data.lifetimes.toLocaleString('en')} lifetimes<sup>*</sup>. 
                     Or long enough to walk to the moon and back {data.moonYears.toLocaleString('en')} times<sup>&#10013;</sup>. But don't let that put you off.</p>
                 <p>God speed!</p>
+                <a href="">Restart</a>
             </div>
 
             <div className="references">
