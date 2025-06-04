@@ -16,7 +16,7 @@ function App() {
 
   const [showResults, setShowResults] = useState(false);
 
-  function calculateYears(formData: object) {
+  function calculateYears(formData) {
 
     const earnings = Number(formData.get("earnings"));
     const period = formData.get("period");
@@ -47,7 +47,7 @@ function App() {
     <div>
       <h1>My First Billion</h1>
 
-      {showResults ? <Results data={userData} /> : <Form calculate={calculateYears}/>}
+      {showResults ? <Results data={userData} /> : <Form calculateYears={calculateYears}/>}
       
     </div>
   )

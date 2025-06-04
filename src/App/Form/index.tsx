@@ -1,12 +1,12 @@
 import './index.css'
 
-function Form({calculate}) {
+function Form({calculateYears}) {
 
     return(
         <div className="form-container">
           <p>How long does it take to earn a billion?</p>
           <p>Enter your earnings to find out:</p>
-          <form action={calculate}>
+          <form action={calculateYears}>
 
             <div className="earnings-container">
               <input type="number" name="earnings" required/>
