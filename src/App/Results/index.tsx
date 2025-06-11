@@ -24,9 +24,7 @@ function Results ({data}) {
                 <p>Earning £{data.earnings.toLocaleString('en')} a {data.period} will make you a billionaire by the year {data.endYear}. Only {data.yearsToGo.toLocaleString('en')} years away!</p>
                 <p>That's roughly {data.lifetimes.toLocaleString('en')} lifetimes<span>&#185;</span>. 
                     Or long enough to walk to the moon and back {data.moonYears.toLocaleString('en')} times<span>&#178;</span>. Let the countdown commence!</p>
-                <p></p>
                 <a href="">Restart</a>
-                <p></p>
             </div>
 
             <div className="references">
